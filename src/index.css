@@ -1,0 +1,232 @@
+@import "tailwindcss";
+
+
+:root {
+  --color-main-50: #eafbe7;
+  --color-main-100: #c8f4c0;
+  --color-main-600: #2DA831;
+  --color-main-700: #24902a;
+  --color-main-800: #1b7822;
+
+  --color-success-600: #27AE60;
+  --color-success-700: #1e9650;
+
+  --color-danger-600: #E53E3E;
+  --color-warning-600: #F59E0B;
+  --color-info-600: #3B82F6;
+  --color-tertiary-600: #8B5CF6;
+
+  --color-heading: #1a1a1a;
+  --color-heading-two: #333333;
+  --color-heading-three: #555555;
+
+  --color-neutral-50: #f5f5f5;
+  --color-neutral-100: #eeeeee;
+  --color-neutral-200: #e0e0e0;
+
+  --color-gray-100: #e8e8e8;
+  --color-gray-400: #999999;
+  --color-gray-500: #777777;
+  --color-gray-600: #666666;
+  --color-gray-700: #444444;
+  --color-gray-800: #333333;
+  --color-gray-900: #1a1a1a;
+
+  --color-light-purple: #f3f0ff;
+}
+
+/* ===== Global Styles ===== */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #555;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+  }
+
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    outline: none;
+  }
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* ===== Swiper custom (Banner carousel) ===== */
+.banner-swiper .banner-prev,
+.banner-swiper .banner-next {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background: white !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #eee !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.banner-swiper .banner-prev:hover,
+.banner-swiper .banner-next:hover {
+  background: #007E8F !important;
+  color: white !important;
+  border-color: #007E8F !important;
+  box-shadow: 0 8px 20px rgba(0, 126, 143, 0.3) !important;
+}
+
+/* Hide default Swiper buttons if they appear */
+.banner-swiper .swiper-button-prev,
+.banner-swiper .swiper-button-next {
+  display: none !important;
+}
+
+/* ===== Progress bar ===== */
+.product-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.product-progress-bar {
+  height: 100%;
+  border-radius: 999px;
+  background: #1c799b;
+  transition: width 0.5s;
+}
+
+/* ===== Text line clamp ===== */
+.text-line-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  /* standard property for compatibility */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== Blinking Animation ===== */
+@keyframes blink {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateX(-50%);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05) translateX(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(-50%);
+  }
+}
+
+.badge-blink {
+  animation: blink 1.5s infinite ease-in-out;
+}
+
+/* ===== Mini Product Horizontal Slide ===== */
+@keyframes miniProductSlide {
+
+  0%,
+  38% {
+    transform: translateX(0);
+  }
+
+  46%,
+  84% {
+    transform: translateX(-33.333%);
+  }
+
+  92%,
+  100% {
+    transform: translateX(-66.666%);
+  }
+}
+
+.mini-product-slide {
+  animation: miniProductSlide 8s ease-in-out infinite;
+}
+
+.mini-product-slide:hover {
+  animation-play-state: paused;
+}
+
+/* ===== Brand Horizontal Continuous Scroll ===== */
+@keyframes brandScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-scroll {
+  animation: brandScroll 20s linear infinite;
+}
+
+.brand-scroll:hover {
+  animation-play-state: paused;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+@theme {
+  --font-quicksand: "Quicksand";
+}
