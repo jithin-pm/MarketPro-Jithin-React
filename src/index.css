@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 
-
 :root {
   --color-main-50: #eafbe7;
   --color-main-100: #c8f4c0;
@@ -225,6 +224,8 @@
 .brand-scroll:hover {
   animation-play-state: paused;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 @theme {
   --font-quicksand: "Quicksand";

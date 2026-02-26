@@ -1,71 +1,144 @@
 # MarketPro React
 
-MarketPro is a fast, responsive, and modern React-based application built with Vite. It features a sleek user interface for an e-commerce platform and incorporates smooth animations and modern design principles.
+A modern, responsive e-commerce front-end built with React and Vite. MarketPro features a fully componentized home page, product detail view, smooth animations, and a clean design powered by Tailwind CSS.
 
-## Features
-
-- **Blazing Fast Development**: Powered by Vite and React 19.
-- **Modern Styling**: Styled using Tailwind CSS v4 for utility-first responsive design.
-- **Routing**: Seamless navigation managed by React Router DOM.
-- **Interactive UI**:
-  - Animations via Framer Motion.
-  - Carousels and sliders implemented with Swiper.
-  - Beautiful iconography provided by Phosphor Icons.
+---
 
 ## Tech Stack
 
-- **Framework**: [React](https://react.dev/)
-- **Build Tool**: [Vite](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Routing**: [React Router](https://reactrouter.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Icons**: [Phosphor Icons](https://phosphoricons.com/)
+| Tool | Purpose |
+|---|---|
+| [React 19](https://react.dev/) | UI Framework |
+| [Vite](https://vitejs.dev/) | Build tool & dev server |
+| [Tailwind CSS v4](https://tailwindcss.com/) | Utility-first styling |
+| [React Router DOM v7](https://reactrouter.com/) | Client-side routing |
 
-## Prerequisites
 
-Before you begin, ensure you have the following installed:
-- [Node.js](https://nodejs.org/en/) (v16.x or newer recommended)
-- [npm](https://www.npmjs.com/) (usually comes with Node.js)
+## Project Structure
+
+```
+marketpro-react/
+│
+├── public/                     # Static assets served as-is
+│   └── images/
+│       ├── bg/                 # Background images
+│       ├── icon/               # Icon images 
+│       ├── logo/               # Brand logos
+│       └── thumbs/             # Product & UI thumbnail images
+│
+├── src/
+│   ├── main.jsx                # App entry point — mounts React to DOM
+│   ├── App.jsx                 # Root component — defines routes
+│   ├── index.css               # Global styles & Tailwind imports
+│   │
+│   ├── layouts/
+│   │   └── MainLayout.jsx      # Shared page shell (Header + Footer + Outlet)
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx            # Home page — assembles all home sections
+│   │   └── ProductDetails.jsx  # Product detail page
+│   │
+│   └── components/
+│       ├── Header.jsx          # Top navigation bar
+│       ├── Footer.jsx          # Site footer
+│       ├── Banner.jsx          # Hero banner slider
+│       ├── FeatureSection.jsx  # Category feature grid
+│       ├── PromotionalBanner.jsx # Promotional strip/banner
+│       ├── FlashSales.jsx      # Flash sale countdown section
+│       ├── RecommendedProducts.jsx # Personalized product grid
+│       ├── HotDeals.jsx        # Hot deals tabbed section
+│       ├── ShopByBrands.jsx    # Brand logo slider
+│       ├── BestSellers.jsx     # Best-selling products section
+│       ├── Newsletter.jsx      # Email subscription section
+│       ├── ProductCard.jsx     # Reusable product card component
+│       ├── Preloader.jsx       # Page loading animation
+│       └── ScrollToTop.jsx     # Scroll-to-top button
+│
+├── index.html                  # HTML entry point
+├── vite.config.js              # Vite configuration
+├── eslint.config.js            # ESLint configuration
+└── package.json                # Project dependencies & scripts
+```
+
+
+## Architecture
+
+### Component-Based Design
+The UI is broken down into small, focused, reusable components. Each component owns its own markup, logic, and styles — keeping concerns isolated and the codebase easy to extend.
+
+```
+App
+└── BrowserRouter
+    └── Routes
+        └── MainLayout          ← Shared shell (Header, Footer, Preloader)
+            ├── Home            ← Composes all home section components
+            │   ├── Banner
+            │   ├── FeatureSection
+            │   ├── FlashSales
+            │   └── ... (more sections)
+            └── ProductDetails  ← Standalone product detail page
+```
+
+### Layout Pattern
+A single `MainLayout` component wraps all pages using React Router's `<Outlet />`. This ensures the `Header`, `Footer`, `Preloader`, and `ScrollToTop` are rendered consistently across every route without duplication.
+
+### Routing
+Routing is handled by **React Router DOM v7** using a declarative `<Routes>` + `<Route>` setup in `App.jsx`. Current routes:
+
+| Path | Component | Description |
+|---|---|---|
+| `/` | `Home` | Main landing page |
+| `/product/:id` | `ProductDetails` | Dynamic product detail page |
+
+### Data Flow
+Components manage their own local state using React's `useState` and `useEffect` hooks. Product data is defined as static arrays within each component — no external API or global state library is used.
+
+### Styling
+Styling uses **Tailwind CSS v4** utility classes directly in JSX. Global base styles and font imports live in `src/index.css`. Animations are handled by **Framer Motion** for entrance effects and transitions, and **Swiper** for carousel/slider interactions.
+
+---
 
 ## Getting Started
 
-Follow these steps to set up the project locally:
+### Prerequisites
 
-1. **Clone the repository** (if you haven't already):
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) v16 or newer
+- npm (bundled with Node.js)
+
+### Installation
+
+1. **Clone the repository:**
    ```bash
    git clone <repository-url>
    cd marketpro-react
    ```
 
-2. **Install dependencies**:
-   Run the following command in the project root to install the required packages:
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. **Start the development server**:
+3. **Start the development server:**
    ```bash
    npm run dev
    ```
-   This will start the local development server, typically at `http://localhost:5173`.
+
+4. Open your browser and navigate to:
+   ```
+   http://localhost:5173
+   ```
+
+---
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the local development server with hot reload |
+| `npm run build` | Build optimized production bundle to `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint to check for code issues |
 
-- `npm run dev` - Starts the development server.
-- `npm run build` - Builds the app for production to the `dist` folder.
-- `npm run lint` - Runs ESLint to statically analyze the code and catch errors.
-- `npm run preview` - Boots up a local static server to preview the production build.
+---
 
-## Contributing
-
-1. Fork the project.
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
-
-## License
-
-This project is open-source and available to use.
