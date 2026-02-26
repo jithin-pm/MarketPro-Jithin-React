@@ -20,7 +20,7 @@ const ProductCard = ({
     if (variant === 'slider') {
         return (
             <div className="bg-white px-5 py-4 border border-gray-100 hover:border-[#1c799b] rounded-2xl relative transition-all duration-200 group w-full mx-auto flex flex-col h-full">
-                <Link to="/cart" className="absolute top-4 right-4 z-10 bg-[#e3f4fa] text-[#1c799b] hover:bg-[#1c799b] hover:text-white py-3 px-6 rounded-full flex items-center gap-2 text-sm font-medium transition">
+                <Link  className="absolute top-4 right-4 z-10 bg-[#e3f4fa] text-[#1c799b] hover:bg-[#1c799b] hover:text-white py-3 px-6 rounded-full flex items-center gap-2 text-sm font-medium transition">
                     Add <ShoppingCart size={16} />
                 </Link>
                 <Link to="/product/1" className="flex items-center justify-center overflow-hidden py-12">
@@ -89,7 +89,7 @@ const ProductCard = ({
                         <Star size={14} weight="fill" className="text-amber-500" />
                         <span className="text-xs font-bold text-gray-600">({reviews})</span>
                     </div>
-                    <Link to="/cart" className="mt-5 w-full bg-[#e3f4fa] text-[#1c799b] hover:bg-[#1c799b]  hover:text-white py-2.5 px-5 rounded-full flex items-center justify-center gap-2 text-sm font-medium transition">
+                    <Link className="mt-5 w-full bg-[#e3f4fa] text-[#1c799b] hover:bg-[#1c799b]  hover:text-white py-2.5 px-5 rounded-full flex items-center justify-center gap-2 text-sm font-medium transition">
                         Add To Cart <ShoppingCart size={16} />
                     </Link>
                 </div>

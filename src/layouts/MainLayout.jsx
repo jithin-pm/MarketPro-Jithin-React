@@ -7,8 +7,7 @@ import Preloader from '../components/Preloader'
 const MainLayout = () => {
     return (
         <>
-            <Preloader />
-           
+            <Preloader />   
             <Header />
             <main>
                 <Outlet />

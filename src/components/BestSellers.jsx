@@ -102,7 +102,7 @@ const BestSellers = () => {
                                             <span className="text-gray-800 text-[13px] font-semibold block">Sold: 18/35</span>
                                         </div>
 
-                                        <Link to="/cart" className="mt-auto w-full bg-[#e3f4fa] text-[#1c799b] hover:bg-[#1c799b] hover:text-white py-2.5 rounded-full flex items-center justify-center gap-2 text-[15px] font-bold transition-colors">
+                                        <Link className="mt-auto w-full bg-[#e3f4fa] text-[#1c799b] hover:bg-[#1c799b] hover:text-white py-2.5 rounded-full flex items-center justify-center gap-2 text-[15px] font-bold transition-colors">
                                             Add To Cart <ShoppingCart size={18} weight="regular" />
                                         </Link>
                                     </div>

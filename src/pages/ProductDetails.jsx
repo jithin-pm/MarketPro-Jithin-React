@@ -94,7 +94,7 @@ const ProductDetails = () => {
 
                         {/* Buttons */}
                         <div className="flex flex-wrap gap-3">
-                            <Link to="/cart" className="flex-1 min-w-[200px] bg-main-600 text-white py-3.5 px-8 rounded-full flex items-center justify-center gap-2 font-medium hover:bg-main-800 transition">
+                            <Link className="flex-1 min-w-[200px] bg-main-600 text-white py-3.5 px-8 rounded-full flex items-center justify-center gap-2 font-medium hover:bg-main-800 transition">
                                 <ShoppingCart size={20} /> Add to Cart
                             </Link>
                             <button className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-danger-600 hover:border-danger-600 transition">

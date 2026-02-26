@@ -22,7 +22,7 @@ const footerLinks = {
     myAccount: [
         { label: 'My Account', to: '/shop' },
         { label: 'Order History', to: '/shop' },
-        { label: 'Shopping Cart', to: '/cart' },
+        { label: 'Shopping Cart' },
         { label: 'Compare', to: '/shop' },
         { label: 'Help Ticket', to: '/shop' },
         { label: 'Wishlist', to: '/cart' },

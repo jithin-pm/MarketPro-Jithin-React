@@ -52,7 +52,7 @@ const FeatureSection = () => {
                                     transition={{ duration: 0.4, delay: idx * 0.05 }}
                                     viewport={{ once: true }}
                                 >
-                                    <Link to="/shop" className="block group/item">
+                                    <Link className="block group/item">
                                         <div className="w-38 h-38 mx-auto rounded-full bg-[#e8f9e9] flex items-center justify-center overflow-hidden border-2 border-transparent hover:border-main-600 transition">
                                             <img src={item.img} alt={item.name} className="w-26 h-26 object-contain group-hover/item:scale-110 transition-transform" />
                                         </div>

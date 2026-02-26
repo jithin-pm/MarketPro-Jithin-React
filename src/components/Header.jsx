@@ -17,7 +17,7 @@ const navItems = [
     {
         label: 'Shop',
         submenu: [
-            { label: 'Shop', to: '/shop' },
+            { label: 'Shop',  },
             { label: 'Shop Details', to: '#' },
         ],
     },
@@ -25,7 +25,7 @@ const navItems = [
         label: 'Pages',
         badge: { text: 'New', color: 'bg-[#FF9F43]' },
         submenu: [
-            { label: 'Cart', to: '/cart' },
+            { label: 'Cart' },
             { label: 'Wishlist', to: '#' },
             { label: 'Checkout', to: '#' },
             { label: 'Become Seller', to: '#' },
@@ -255,14 +255,14 @@ const Header = () => {
                                 <User size={26} className="text-gray-700 group-hover:text-[#007E8F] transition" />
                                 <span className="text-[15px] font-semibold text-heading hidden lg:block group-hover:text-[#007E8F]">Profile</span>
                             </Link>
-                            <Link to="/cart" className="flex items-center gap-2 group">
+                            <Link  className="flex items-center gap-2 group">
                                 <div className="relative">
                                     <Heart size={26} className="text-gray-700 group-hover:text-[#007E8F] transition" />
                                     <span className="absolute -top-2 -right-2 w-[18px] h-[18px] flex items-center justify-center rounded-full bg-[#007E8F] text-white text-[10px] font-bold border-2 border-white">2</span>
                                 </div>
                                 <span className="text-[15px] font-semibold text-heading hidden lg:block group-hover:text-[#007E8F]">Wishlist</span>
                             </Link>
-                            <Link to="/cart" className="flex items-center gap-2 group">
+                            <Link className="flex items-center gap-2 group">
                                 <div className="relative">
                                     <ShoppingCartSimple size={26} className="text-gray-700 group-hover:text-[#007E8F] transition" />
                                     <span className="absolute -top-2 -right-2 w-[18px] h-[18px] flex items-center justify-center rounded-full bg-[#007E8F] text-white text-[10px] font-bold border-2 border-white">2</span>
@@ -296,7 +296,7 @@ const Header = () => {
                                             {categories.map((cat, i) => (
                                                 <Link
                                                     key={i}
-                                                    to="/shop"
+                                                    
                                                     onClick={() => setCategoryOpen(false)}
                                                     className="py-4 px-2 rounded-lg hover:bg-main-50 flex flex-col items-center text-center border border-transparent hover:border-main-100 transition"
                                                 >

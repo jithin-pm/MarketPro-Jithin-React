@@ -59,7 +59,7 @@ const Banner = () => {
                                     {slide.title} <span className="text-[#007E8F]">{slide.highlight}</span> {slide.titleEnd}
                                 </h2>
                                 <div className="flex items-center gap-6 flex-wrap">
-                                    <Link to="/shop" className="inline-flex items-center gap-2 bg-[#1c799b] hover:bg-[#004f6b]  text-white px-8 py-3 rounded-full font-semibold  transition ">
+                                    <Link  className="inline-flex items-center gap-2 bg-[#1c799b] hover:bg-[#004f6b]  text-white px-8 py-3 rounded-full font-semibold  transition ">
                                         Explore Shop <ShoppingCartSimple size={20} weight="bold" />
                                     </Link>
                                     <div className="flex items-center justify-center gap-2">
